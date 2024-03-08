@@ -7,6 +7,10 @@ type InputFieldProps = {
   type?: string;
   variant?: string;
   borderColor?: string;
+  value: string;
+  onChange: (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => void;
 };
 export default function TextInput({
   name,
@@ -14,6 +18,8 @@ export default function TextInput({
   isRequired,
   type,
   variant,
+  value,
+  onChange,
 }: InputFieldProps) {
   return (
     <FormControl my={4} isRequired={isRequired}>
@@ -21,6 +27,8 @@ export default function TextInput({
         <Textarea
           focusBorderColor="purple.200"
           name={name}
+          value={value}
+          onChange={onChange}
           variant={variant}
           placeholder={placeholder}
         />

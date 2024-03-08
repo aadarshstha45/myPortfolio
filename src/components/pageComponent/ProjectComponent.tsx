@@ -6,13 +6,15 @@ import {
   Heading,
   Image,
   Text,
+  useColorMode,
 } from "@chakra-ui/react";
 import { NavLink } from "react-router-dom";
 import { projectData } from "../../data";
 import { useProjectStore } from "../../utils/store";
 import Reveal from "../../layouts/Reveal";
 
-export default function Component2() {
+export default function ProjectComponent() {
+  const { colorMode } = useColorMode();
   const { displayCount, setDisplayCount } = useProjectStore();
 
   const handleExpand = () => {
@@ -27,7 +29,7 @@ export default function Component2() {
       finalY={0}
       delay={2}
     >
-      <Flex py={10} flexDir={"column"}>
+      <Flex py={10} flexDir={"column"} id="project">
         <Heading textAlign={"start"} mb={2}>
           Projects
         </Heading>
@@ -40,16 +42,20 @@ export default function Component2() {
               finalOpacity={1}
               initialY={75}
               finalY={0}
+              duration={0.5}
+              key={id}
             >
               <Flex
                 as={NavLink}
                 to={link}
                 target="_blank"
-                bg={"#2b3445"}
-                p={{ base: 1, sm: 5 }}
+                bg={colorMode === "dark" ? "#2b3445" : "#f5f5f5"}
+                p={5}
                 my={5}
-                key={id}
-                _hover={{ transform: "scale(1.01)", bg: "#2b3450" }}
+                _hover={{
+                  transform: "scale(1.01)",
+                  bg: colorMode === "dark" ? "#2b3450" : "#f5f5f1",
+                }}
                 borderRadius={10}
               >
                 <Flex
@@ -59,13 +65,16 @@ export default function Component2() {
                 >
                   <Image
                     src={image}
-                    w={{ base: 100, sm: 150 }}
-                    h={{ base: 100, sm: 150 }}
+                    w={{ base: 82, sm: 150 }}
+                    h={{ base: 82, sm: 150 }}
                   />
                   <Flex flexDir={"column"} gap={2}>
                     <Flex gap={2} flexWrap={"wrap"}>
                       {projectTitle && (
-                        <Text fontSize={"2xl"} fontWeight={"semibold"}>
+                        <Text
+                          fontSize={{ base: "md", sm: "lg", md: "xl" }}
+                          fontWeight={"semibold"}
+                        >
                           {projectTitle}
                         </Text>
                       )}
@@ -81,7 +90,11 @@ export default function Component2() {
                           </HStack>
                         ))}
                     </Flex>
-                    {description && <Text>{description}</Text>}
+                    {description && (
+                      <Text fontSize={{ base: "sm", sm: "lg", md: "xl" }}>
+                        {description}
+                      </Text>
+                    )}
                   </Flex>
                 </Flex>
               </Flex>

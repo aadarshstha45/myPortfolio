@@ -3,25 +3,13 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App.tsx";
 import "./index.css";
-import { ChakraProvider, extendTheme } from "@chakra-ui/react";
-
-const theme = extendTheme({
-  styles: {
-    global: {
-      "html, body": {
-        color: "white",
-        lineHeight: "tall",
-        bg: "#2b3452",
-        fontSize: "md",
-        fontFamily: "Poppins",
-      },
-    },
-  },
-});
+import { ChakraProvider, ColorModeScript } from "@chakra-ui/react";
+import { theme } from "./utils/theme.tsx";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <ChakraProvider theme={theme}>
+      <ColorModeScript initialColorMode={theme.config.initialColorMode} />
       <App />
     </ChakraProvider>
   </React.StrictMode>

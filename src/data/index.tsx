@@ -8,6 +8,10 @@ import Postgres from "../assets/icons/postgres.png";
 import Facebook from "../assets/icons/facebook.png";
 import Instagram from "../assets/icons/instagram.png";
 import Linkedin from "../assets/icons/linkedin.png";
+import Tailwind from "../assets/icons/tailwind.png";
+import Location from "../assets/icons/location.png";
+import Phone from "../assets/icons/call.png";
+import Mail from "../assets/icons/gmail.png";
 
 const socialLinks = [
   {
@@ -76,7 +80,7 @@ const projectData = [
   },
   {
     id: 3,
-    projectTitle: "CodeTara Website",
+    projectTitle: "Website for Company",
     description: "The website for CodeTara was built using ReactJS",
     link: "https://codetara.com",
     image: React,
@@ -137,6 +141,64 @@ const experienceData = [
     title: "Github",
     shadow: "#bcbcbc",
   },
+  {
+    id: 8,
+    image: Tailwind,
+    title: "Tailwind CSS",
+    shadow: "#06b6d4",
+  },
 ];
 
-export { socialLinks, projectData, experienceData };
+const educationData = [
+  {
+    id: 1,
+    title: "The Old Capital Secondary School",
+    description: "SEE 2073",
+    duration: " -2017",
+  },
+  {
+    id: 2,
+    title: "National Institute of Science and Technology",
+    description: "HSEB +2 Science",
+    duration: "2017-2019",
+  },
+  {
+    id: 3,
+    title: "Orchid International College",
+    description: "Bachelor in Computer Application (BCA)",
+    duration: "2019-Present",
+  },
+];
+
+const contactInformation = [
+  {
+    id: 2,
+    title: "Phone",
+    slug: "phone",
+    value: "9846704015",
+    image: Phone,
+  },
+  {
+    id: 1,
+    title: "Email",
+    slug: "email",
+    value: "aadarsh.stha36@gmail.com",
+    image: Mail,
+  },
+
+  {
+    id: 3,
+    title: "Address",
+    slug: "address",
+    value: "Dhungedara, Kathmandu, Nepal",
+    image: Location,
+  },
+];
+
+export {
+  socialLinks,
+  projectData,
+  experienceData,
+  educationData,
+  contactInformation,
+};

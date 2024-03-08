@@ -35,7 +35,11 @@ export default function Reveal({
       opacity: finalOpacity,
       y: finalY,
       x: finalX,
-      transition: { duration: duration, ease: "linear", delay: delay },
+      transition: {
+        duration: duration,
+        ease: "linear",
+        delay: delay,
+      },
     },
   };
 

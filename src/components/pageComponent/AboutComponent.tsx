@@ -6,7 +6,7 @@ import { socialLinks } from "../../data";
 import Reveal from "../../layouts/Reveal";
 import { motion } from "framer-motion";
 
-export default function Component1() {
+export default function AboutComponent() {
   const variants = {
     initial: { opacity: 0, x: 100 },
     animate: { opacity: 1, x: 0, transition: { duration: 1, delay: 1 } },
@@ -17,6 +17,7 @@ export default function Component1() {
       flexDir={{ base: "column-reverse", md: "row" }}
       align={"center"}
       gap={5}
+      id="about"
     >
       <Flex flexDir={"column"} gap={5}>
         <Reveal
